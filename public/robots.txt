@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hydravexengineering.com
+
+# Sitemaps
+Sitemap: https://hydravexengineering.com/sitemap.xml

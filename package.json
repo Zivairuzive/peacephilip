@@ -1,0 +1,50 @@
+{
+  "name": "hydravex",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "postbuild": "next-sitemap --config sitemap.config.js",
+    "sitemap": "next-sitemap --config sitemap.config.js",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.1.1",
+    "@heroicons/react": "^2.1.4",
+    "@nextui-org/input": "^2.2.2",
+    "@ngrok/ngrok": "^1.4.0",
+    "@vercel/analytics": "^1.3.1",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3",
+    "emailjs": "^4.0.3",
+    "framer-motion": "^11.3.4",
+    "next": "15.5.3",
+    "next-sitemap": "^4.2.3",
+    "react": "19.1.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "19.1.1",
+    "react-type-animation": "^3.2.0",
+    "scroll-entrance": "^1.0.0",
+    "sharp": "^0.33.4",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.14",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "eslint": "^8",
+    "eslint-config-next": "15.5.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9"
+  }
+}
