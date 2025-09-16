@@ -49,9 +49,9 @@ const sendEmail = (params:ContactProps, responseCallbacks: RequestUpdate)=>{
                 responseCallbacks._result(response.text)
             }
         },
-         (error)=>{
+        (error)=>{
             responseCallbacks.error(error);
-         }
+        }
         )
 
 }
@@ -137,7 +137,7 @@ export default function ContactForm(){
                     <button onClick={MessageSubmit}
                     disabled={Loading}
                     className="bg-sky-700 pl-3 pr-3 py-2 rounded-md text-white flex-end shadow-md hover:bg-sky-500">
-                       {Loading?(
+                    {Loading?(
                         <div className="flex"><ArrowPathIcon title="Submitting" className="w-6"/> 
                         <p className="px-1">Loading</p>
                         </div>
@@ -146,10 +146,10 @@ export default function ContactForm(){
                         }
                     </button>
                 </div>
-               
+            
             </div>
         </div>
-         <div className="mt-10"></div>
+        <div className="mt-10"></div>
         </>
     )
 }

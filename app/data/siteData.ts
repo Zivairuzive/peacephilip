@@ -39,6 +39,25 @@ export const seoData = {
     },
 };
 
+export const socialLinks = [
+    {
+        href: 'https://www.facebook.com/share/BGRpkiB8ZuUvRReR/?mibextid=LQQJ4d',
+        src: '/facebook.svg',
+        alt: 'facebook_page',
+    },
+    {
+        href: '', // LinkedIn link missing, add if available
+        src: '/linkedin.svg',
+        alt: 'linkedin_page',
+    },
+    {
+        href: 'https://www.instagram.com/p/C9FltsRNR1y/?hl=en',
+        src: '/instagram.svg',
+        alt: 'instagram_page',
+    },
+];
+
+
 // Company Information
 export const companyInfo = {
     name: "PeacePhilip Construction",
@@ -54,13 +73,28 @@ export const companyInfo = {
         email: "peacephilipppconstruction@gmail.com",
     },
 };
+export const contactInfo = [
+    {
+        label: 'Address',
+        value: JSON.stringify(companyInfo.address),
+    },
+    {
+        label: 'Phone',
+        value: companyInfo.contact.email,
+    },
+    {
+        label: 'Email',
+        value: companyInfo.contact.email,
+    },
+];
+export const HomePageBannerHeader = "Building Tomorrow, Communities Today";
 
 // Home Page Data
 export const homePageData = {
     banner: {
         hero: {
             url: "bg-[url('/landing01.webp')]",
-            text: "Building Tomorrow, Communities Today",
+            text: HomePageBannerHeader,
         },
         cta: {
             url: "bg-[url('/works.webp')]",
@@ -165,28 +199,28 @@ export const servicesPageData = {
     },
     serviceSections: [
         {
-            header: "Architectural Designs",
+            header: "Tailing",
             text: "We develop unique vision for the project, considering the purpose, aesthetics, and functionality by understanding and integrating the client's needs, budget, and preferences into the design!",
             image: "/service-architectural.avif",
             background: "bg-white",
             order: "order-last",
         },
         {
-            header: "Construction and Renovations",
+            header: "Plumbing",
             text: "We cover residential, commecial and industrial projects. We renovate systems and structures bringing back to original condition or upgrading to more modern conditions",
             image: "/service-renovation.avif",
             background: "bg-gray-300",
             order: "order-first",
         },
         {
-            header: "Civil and Structural Engineering",
+            header: "Gamazin Walls",
             text: "From bridges to sky scrappers, we engineer solutions that stand the test of time!",
             image: "/service-structural.png",
             background: "bg-white",
             order: "order-last",
         },
         {
-            header: "Building Construction",
+            header: "Electrical Works",
             text: "We construct inspiring moderm spaces that endures for you",
             image: "/service-building.png",
             background: "bg-gray-300",
@@ -202,27 +236,27 @@ export const servicesPageData = {
     ],
     services: [
         {
-            title: "Architectural Designs",
+            title: "Tailing",
             description:
                 "Creativity meets functionality in our innovative designs",
         },
         {
-            title: "Construction and Renovations",
+            title: "Ceiling Installation",
             description:
                 "We bring visions to life, whether a new build or revalitasation project",
         },
         {
-            title: "Civil and Structural Engineering",
+            title: "Gamazin Walls",
             description:
                 "From bridges to skyscrappers, we engineer solutions that withstand the test of time",
         },
         {
-            title: "Council and Municipal Submissions",
+            title: "Electrical Works",
             description:
                 "For all your plans and subdivision permits, we can submit any paperwork for processing on your behalf.",
         },
         {
-            title: "Building Construction",
+            title: "Plumbing",
             description:
                 "We construct modern space that inspire and endure for you",
         },
