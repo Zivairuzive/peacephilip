@@ -2,6 +2,7 @@
 // This file contains all hardcoded values from across the application
 
 // SEO and Metadata
+export const companyName = 'Peace and Philip'
 export const seoData = {
     metadata: {
         title: "PeacePhilip Construction",
