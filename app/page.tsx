@@ -35,43 +35,20 @@ export default function Home() {
 
     return (
         <main className="m-auto">
-            <div className="">
-                <PlumbingLandingPage/>
-                <CardInformation/>
-            </div>
-            <div className="">
-                <Section header={aboutMinor.header}
-                    text={aboutMinor.text} btn={aboutMinor.btn}
-                    image={"/working.webp"} order="order-last" background="bg-gray-100"/>
-
-                <Section header={strategy.header} text={strategy.text}
-                    lists={strategy.lists} image={strategy.image}
-                    order={strategy.order} background={strategy.background}/>
-                <SectionHeader header="Why Choose Us" icon="question" />
-                <StaggeredList className="sm:grid sm:grid-cols-4 place-content-center sm:gap-4"
-                    direction ="up" staggerDelay = {0.2}>
-                    {cardDetails.map((card, index) => (
-                        <Card key={index} image={card.image}
-                            header={card.header} subHead={card.subHead}/>
-                    ))}
-                </StaggeredList>
-                <Observer duration={2.0}>
-                    <div className="mt-5">
-                        <Banner url={banner.cta.url}text={banner.cta.text} 
-                            subtext={banner.cta.subtext} height={banner.cta.height} 
-                            btn={banner.cta.btn} font={banner.cta.font}/>
-                    </div>
-                </Observer>
-                <SectionHeader header="Our Services" icon="service" />
-                <div className="">
-                    <ServiceCard />
-                </div>
-            </div>
+            <PlumbingLandingPage/>
+            <CardInformation/>
+            {/* <Section {... aboutMinor} image={"/working.webp"} order="order-last" background="bg-gray-100"/> */}
+            {/* <Section {...strategy}/> */}
+            <SectionHeader header="Why Choose Us" icon="question" />
+            <StaggeredList className="sm:grid sm:grid-cols-4 place-content-center sm:gap-4" direction ="up" staggerDelay = {0.2}>
+                {cardDetails.map((card, index) => (<Card key={index} {...card}/>))}
+            </StaggeredList>
             <Observer duration={2.0}>
-                <div>
-                    <FullSection url={fullSection.url} head1={fullSection.head1}
-                        head2={fullSection.head2} subhead={subhead}/>
-                </div>
+                <div className="mt-5"><Banner {... banner.cta}/></div>
+            </Observer>
+            <ServiceCard />
+            <Observer duration={2.0}>
+                <FullSection {...fullSection}/>
             </Observer>
             <FAQComponent/>
         </main>

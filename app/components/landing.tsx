@@ -63,10 +63,7 @@ const FeatureCard = ({ feature }: FeatureCardProps) => (
 
 const PlumbingLandingPage = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-600 via-blue-700 to-green-800">
-            {/* Navigation */}
-            <LandingNavigation />
-            {/* Hero Section */}
+        <div className="min-h-screen bg-green-900">
             <div className="px-4 py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -94,25 +91,13 @@ const PlumbingLandingPage = () => {
 
                         {/* Right Content - Professional Image */}
                         <div className="relative">
-                            <div className="bg-gradient-to-br from-green-300 to-blue-700 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                                <div className="rounded-2xl p-8 -rotate-3">
-                                    <div className="w-full h-80 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center relative overflow-hidden">
-                                        {/* Simulated professional plumber */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-orange-600 to-transparent opacity-50"></div>
-                                        <div className="relative z-10 text-center">
-                                            <Image src={"/home_tiles_photo.jpg"} width={500} height={500} alt="home photo"/>
-                                        </div>
-
-                                        {/* Decorative elements */}
-                                        <div className="absolute top-4 right-4 w-16 h-16 bg-yellow-400 rounded-full opacity-20"></div>
-                                        <div className="absolute bottom-4 left-4 w-12 h-12 bg-yellow-300 rounded-full opacity-30"></div>
-                                    </div>
+                            <div className="bg-green-800 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        
+                                <div className="">
+                                    {/* Simulated professional plumber */}
+                                    <Image src={"/home_tiles_photo.jpg"} width={600} height={500} alt="home photo" className="w-full object-cover rotate-4 rounded-md"/>
                                 </div>
                             </div>
-
-                            {/* Floating elements */}
-                            <div className="absolute -top-4 -left-4 w-16 h-16 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
-                            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-blue-400 rounded-full opacity-20 animate-pulse delay-1000"></div>
                         </div>
                     </div>
                 </div>

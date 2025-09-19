@@ -3,7 +3,7 @@ import {
     Instagram, Youtube,
     ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { companyName, seoData, telephone } from '../data/siteData';
+import { company_logo, companyName, seoData, telephone } from '../data/siteData';
 import { CreateGoogleMapsUrl } from '../utils/map';
     
 
@@ -27,12 +27,12 @@ export default function CTAAndFooter() {
     return (
     <div>
         {/* CTA Section */}
-        <section className="bg-blue-600 py-16 px-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <section className="bg-green-900 py-16 px-6">
+        <div className="max-w-6xl mx-auto md:flex lg:flex items-center justify-between">
             <h2 className="text-white text-4xl md:text-5xl font-bold">
             Require Ceiling Installation?
             </h2>
-            <button className="bg-green-700 hover:bg-green-800 text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 whitespace-nowrap">
+            <button className="my-6 bg-green-700 hover:bg-green-800 text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 whitespace-nowrap">
             Call Us  {telephone}
             </button>
         </div>
@@ -45,8 +45,8 @@ export default function CTAAndFooter() {
             {/* Company Info */}
             <div>
                 <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-black font-bold text-sm">🔧</span>
+                <div className="flex items-center justify-center mr-3">
+                    <Image src={company_logo} width={100} height={100} alt="company_log"/>
                 </div>
                 <span className="text-xl font-bold text-gray-900">{companyName}</span>
                 </div>

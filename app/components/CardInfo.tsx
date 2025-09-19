@@ -22,49 +22,36 @@ const cardData = {
             line1: "Tiling solutions",
             line2: "tailored to your needs",
         },
-        description:
-            "Our team of licensed and experienced plumbers is committed to providing prompt, professional, and courteous service, ensuring that your plumbing system is always in optimal condition.",
+        description: "Our team of licensed and experienced team is committed to providing prompt, professional, and courteous service, ensuring that your plumbing system is always in optimal condition.",
     },
     features: [
-        {id: 1, text: "Experienced and certified plumbers",},
+        {id: 1, text: "Experienced and certified team",},
         {id: 2, text: "High-quality materials and equipment",},
         {id: 3,text: "Customer satisfaction guarantee",},
     ],
     styling: {
         hero: {backgroundGradient: "from-gray-800 via-gray-700 to-gray-900",
             iconColor: "text-yellow-400", iconSize: "w-16 h-16",},
-        decorative: {
-            pipe1: {
-                position: "top-8 left-8", size: "w-16 h-4", color: "bg-gray-400",
-                opacity: "opacity-60",
-            },
-            pipe2: {
-                position: "bottom-12 right-12",
-                size: "w-12 h-12", color: "bg-yellow-400",opacity: "opacity-30",
-            },
-            pipe3: {
-                position: "top-1/2 right-8", size: "w-8 h-24",
-                color: "bg-gray-500", opacity: "opacity-50",
-            },
-        },
+        decorative: {},
         button: {
             background: "bg-black bg-opacity-70",
             hover: "hover:bg-opacity-90", textColor: "text-white", padding: "px-6 py-3",
             borderRadius: "rounded-lg",
         },
         features: {
-            iconBackground: "bg-blue-600",iconSize: "w-8 h-8",
+            iconBackground: "bg-green-600",iconSize: "w-8 h-8",
             textSize: "text-lg", textWeight: "font-semibold", textColor: "text-gray-800",},
     },
 };
 
+type CardProps = typeof cardData
 export default function CardInformation() {
     return (
         <div className="bg-gray-50 py-16">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Image */}
-                    <div className="relative group">
+                    <div className = "relative group">
                         <div className="rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:scale-105">
                             <div className={`h-96 bg-gradient-to-br ${cardData.styling.hero.backgroundGradient} relative`}>
                                 {/* Simulated plumber working image */}
@@ -74,13 +61,8 @@ export default function CardInformation() {
                                         <Image src={"/walling.jpg"} height={500} width={500} alt="walling image peacephilip"/>
                                     </div>
                                 </div>
-                                {/* Decorative pipe elements with animations */}
-                                <div className={`absolute ${cardData.styling.decorative.pipe1.position} ${cardData.styling.decorative.pipe1.size} ${cardData.styling.decorative.pipe1.color} rounded-full ${cardData.styling.decorative.pipe1.opacity} transition-all duration-500 group-hover:scale-110 group-hover:opacity-80 animate-pulse`}></div>
-                                <div className={`absolute ${cardData.styling.decorative.pipe2.position} ${cardData.styling.decorative.pipe2.size} ${cardData.styling.decorative.pipe2.color} rounded-full ${cardData.styling.decorative.pipe2.opacity} transition-all duration-500 group-hover:scale-110 group-hover:opacity-50 animate-pulse delay-1000`}></div>
-                                <div className={`absolute ${cardData.styling.decorative.pipe3.position} ${cardData.styling.decorative.pipe3.size} ${cardData.styling.decorative.pipe3.color} rounded-full ${cardData.styling.decorative.pipe3.opacity} transition-all duration-500 group-hover:scale-110 group-hover:opacity-70 animate-pulse delay-2000`}></div>
                             </div>
                         </div>
-
                         {/* Learn more button overlay */}
                         <div className="absolute bottom-8 left-8">
                             <button className={`${cardData.styling.button.background} ${cardData.styling.button.textColor} ${cardData.styling.button.padding}
@@ -104,19 +86,13 @@ export default function CardInformation() {
                         <p className="text-lg text-gray-600 leading-relaxed transition-all duration-300 hover:text-gray-800">
                             {cardData.content.description}
                         </p>
-
                         <div className="space-y-4">
-                            {cardData.features.map((feature, index) => (
-                                <div 
-                                    key={feature.id} 
-                                    className="flex items-center space-x-4 transition-all duration-300 hover:translate-x-2 hover:scale-105 group"
-                                >
+                            {cardData.features.map((feature, _) => (
+                                <div  key={feature.id} className="flex items-center space-x-4 transition-all duration-300 hover:translate-x-2 hover:scale-105 group" >
                                     <div className={`${cardData.styling.features.iconSize} ${cardData.styling.features.iconBackground}
                                     rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}>
                                         <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clipRule="evenodd" />
+                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule = "evenodd" />
                                         </svg>
                                     </div>
                                     <span className={`${cardData.styling.features.textSize} ${cardData.styling.features.textWeight} ${cardData.styling.features.textColor} transition-all duration-300 group-hover:text-gray-900`}>

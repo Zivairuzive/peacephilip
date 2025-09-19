@@ -73,7 +73,7 @@ export function LandingNavigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="relative z-10 px-4 py-4">
+        <nav className="relative z-10 px-4 py-4 bg-green-900">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center space-x-3">

@@ -276,13 +276,13 @@ export const servicesPageData = {
 // About Page Data
 export const aboutPageData = {
     banner: {
-        text: "About Us",
-        url: "bg-hero1",
+        text: "About PeacePhilip",
+        url: "bg-[url(/walls.jpg)]",
     },
     vision: {
         header: "Vision",
-        text: "Being the Market Leader in Facilitating National Development. We aspire to lead the way in shaping Zimbabwe's future but creating sustainable impactful solutionss, and leaving a lasting legacy for the generations to come",
-        image: "/hydra_works.jpg",
+        text: "To become one of South Africa’s most trusted and innovative construction companies, known for delivering high-quality workmanship, modern solutions, and lasting value — transforming spaces and improving lives across communities",
+        image: "/peace_about.jpg",
         background: "bg-gray-200",
     },
     mission: {
@@ -291,7 +291,7 @@ export const aboutPageData = {
         text: "Hydravex Engineering is your one-stop shop for all construction needs. Our intergrated approach ensures seamless project execution from concept to completion. We blend expertise, creativity, and precision to deliver solutions that are built to last.",
         background: "bg-white",
         image: "/mission.jpeg",
-        order: "order-first",
+        order: "order-last",
     },
     coreValues: [
         {
@@ -361,3 +361,4 @@ export const faqData = [
         answer: "Yes, Gamazini finishes work well for both interior and exterior wall."
     }
     ];
+

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Observer from "./observer";
 import { AnimatedContainer, StaggeredList } from "./animations";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+
 type SectionProps = {
     header: string;
     text: string;
@@ -18,30 +19,25 @@ type SectionProps = {
 export default function Section(props: SectionProps) {
     props.order ? props.order : "order-last";
     return (
-        <div className={`${props.background}`}>
+        <div className={`${props.background} h-96`}>
             <div className="sm:grid sm:grid-cols-2 py-10">
                 <AnimatedContainer direction="left" duration={0.8} delay={0.2}>
                     <div className="">
                         <div className="place-content-center text-center py-5">
-                            <motion.div
-                                className="text-2xl sm:text-4xl font-bold py-5 text-sky-900"
+                            <motion.div className="text-2xl sm:text-4xl font-bold py-5 text-sky-900"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3, duration: 0.6 }}
                             >
-                                <p className="py-2">
+                                <p className="py-2 text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                                     <span>{props.header}</span>
                                 </p>
                                 {props.subheading && (
                                     <motion.div
-                                        className="text-sm font-bold text-sky-900"
+                                        className="text-lg text-gray-600 leading-relaxed transition-all duration-300 hover:text-gray-800"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            delay: 0.5,
-                                            duration: 0.5,
-                                        }}
-                                    >
+                                        transition={{ delay: 0.5,duration: 0.5,}}>
                                         <p>
                                             <span>{props.subheading}</span>
                                         </p>
@@ -54,7 +50,7 @@ export default function Section(props: SectionProps) {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4, duration: 0.6 }}
                             >
-                                <p className="text-left leading-6">
+                                <p className="text-lg text-gray-600 leading-relaxed transition-all duration-300 hover:text-gray-800">
                                     {props.text}
                                 </p>
                                 {props.lists && (
@@ -66,12 +62,8 @@ export default function Section(props: SectionProps) {
                                             <motion.li
                                                 key={index}
                                                 className="leading-2 py-1 font-semibold text-gray-600"
-                                                whileHover={{
-                                                    x: 5,
-                                                    color: "#0ea5e9",
-                                                }}
-                                                transition={{ duration: 0.2 }}
-                                            >
+                                                whileHover={{x: 5, color: "#0ea5e9",}}
+                                                transition={{ duration: 0.2 }}>
                                                 {item}
                                             </motion.li>
                                         ))}
