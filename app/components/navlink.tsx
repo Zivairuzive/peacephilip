@@ -10,7 +10,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { pathContext } from '../context'
 import { motion, AnimatePresence } from 'motion/react'
-import { companyName } from '../data/siteData'
+import { company_logo, companyName, telephone } from '../data/siteData'
+import { Phone } from 'lucide-react'
 
 
 const siteLinks = {
@@ -18,13 +19,17 @@ const siteLinks = {
   services: '/services',
   about: '/about',
   contact:'/contact'
-
 }
+
+// Navigation items from landing page
+const navigationItems = [
+    { id: 1, label: "Services", href: "/services" },
+    { id: 2, label: "About", href: "/about" },
+];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
-const logo_src:string = '/peace_logo.jpg';
 
 type HeaderProps = {
   url:string;
@@ -42,6 +47,88 @@ const scaleIn = (delay = 0, duration = 0.4, scale = 0.8) => ({
   animate: { opacity: 1, scale: 1 },
   transition: { delay, duration }
 });
+
+// Styling constants from landing page
+const styles = {
+    navLink: "text-white font-medium hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300",
+    button: "bg-green-700 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-500 transition-colors",
+};
+
+// Navigation item interface
+interface NavigationItem {
+    id: number;
+    label: string;
+    href: string;
+}
+
+// NavigationLink component from landing page
+const NavigationLink = ({item, className = "",}: {item: NavigationItem; className?: string;}) => (
+    <a href={item.href} className={`${styles.navLink} ${className}`}>
+        {item.label}
+    </a>
+);
+
+// Landing Navigation Component for use in landing page
+export function LandingNavigation() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    return (
+        <nav className="relative z-10 px-4 py-4">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+                {/* Logo */}
+                <div className="flex items-center space-x-3">
+                    <div className="h-10 flex items-center justify-center">
+                        <Image width={100} height={100} alt="logo_peacephilip" src={company_logo}/>
+                    </div>
+                </div>
+
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-8">
+                    {navigationItems.map((item) => (
+                        <NavigationLink key={item.id} item={item} />
+                    ))}
+                </div>
+
+                {/* Contact Info */}
+                <div className="hidden lg:flex items-center space-x-4">
+                    <div className="flex items-center space-x-2 text-white">
+                        <Phone className="w-4 h-4" />
+                        <span>{telephone}</span>
+                    </div>
+                    <button className={styles.button}>Contact</button>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-white"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    <div className="w-6 h-0.5 bg-white mb-1"></div>
+                    <div className="w-6 h-0.5 bg-white mb-1"></div>
+                    <div className="w-6 h-0.5 bg-white"></div>
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+                <div className="md:hidden mt-4 bg-blue-800 rounded-lg p-4">
+                    <div className="flex flex-col space-y-3">
+                        {navigationItems.map((item) => (
+                            <NavigationLink key={item.id} item={item} className="text-white hover:text-yellow-300 transition-colors"/>
+                        ))}
+                        <div className="flex items-center space-x-2 text-white pt-2">
+                            <Phone className="w-4 h-4" />
+                            <span>{telephone}</span>
+                        </div>
+                        <button className={`${styles.button} w-full`}>
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+}
 
 export default function Header(prop:HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -75,7 +162,7 @@ export default function Header(prop:HeaderProps) {
           <Link href={safeHref(siteLinks.home)} className="-m-1.5 p-1.5 group">
             <span className="sr-only text-xs">{companyName}</span>
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-              <Image className="h-20 w-auto" src= {logo_src}
+              <Image className="h-20 w-auto" src= {company_logo}
                 width={700} height={500} alt="" />
             </motion.div>
           </Link>
@@ -127,7 +214,7 @@ export default function Header(prop:HeaderProps) {
                 {...fadeIn(0.1, -20)} >
                 <Link href={safeHref(siteLinks.home)} className="-m-1.5 p-1.5">
                   <span className="sr-only">{companyName}</span>
-                  <Image className="h-16 w-auto" src={logo_src} alt=""
+                  <Image className="h-16 w-auto" src={company_logo} alt="company logo"
                     width={700} height={1500}/>
                 </Link>
                 <motion.button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100"

@@ -13,3 +13,5 @@ const CompanyDetails = {
 }
 
 export const owner = 'PeacePhilipConstruction';
+
+export const GOOGLE_API_URL = "https://google.com/maps/search/?api=1&query=";

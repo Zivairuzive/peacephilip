@@ -16,10 +16,14 @@ import {
     ArrowDownRightIcon,
 } from "@heroicons/react/24/outline";
 import { homePageData } from "./data/siteData";
+import PlumbingLandingPage from "./components/landing";
+import CardInformation from "./components/CardInfo";
+import FAQComponent from "./components/faq";
+
 
 // Using data from central data file
-const { banner, aboutMinor, subhead, cardDetails, strategy, fullSection } =
-    homePageData;
+const { banner, aboutMinor, subhead,
+    cardDetails, strategy, fullSection } = homePageData;
 
 export default function Home() {
     const { setPathValue } = useContext(pathContext);
@@ -32,9 +36,10 @@ export default function Home() {
     return (
         <main className="m-auto">
             <div className="">
-                <Banner url={banner.hero.url} text={banner.hero.text} />
+                <PlumbingLandingPage/>
+                <CardInformation/>
             </div>
-            <div className="max-w-7xl m-auto">
+            <div className="">
                 <Section header={aboutMinor.header}
                     text={aboutMinor.text} btn={aboutMinor.btn}
                     image={"/working.webp"} order="order-last" background="bg-gray-100"/>
@@ -43,11 +48,8 @@ export default function Home() {
                     lists={strategy.lists} image={strategy.image}
                     order={strategy.order} background={strategy.background}/>
                 <SectionHeader header="Why Choose Us" icon="question" />
-                <StaggeredList
-                    className="sm:grid sm:grid-cols-4 place-content-center sm:gap-4"
-                    direction="up"
-                    staggerDelay={0.2}
-                >
+                <StaggeredList className="sm:grid sm:grid-cols-4 place-content-center sm:gap-4"
+                    direction ="up" staggerDelay = {0.2}>
                     {cardDetails.map((card, index) => (
                         <Card key={index} image={card.image}
                             header={card.header} subHead={card.subHead}/>
@@ -71,6 +73,7 @@ export default function Home() {
                         head2={fullSection.head2} subhead={subhead}/>
                 </div>
             </Observer>
+            <FAQComponent/>
         </main>
     );
 }

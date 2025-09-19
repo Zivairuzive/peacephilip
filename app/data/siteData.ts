@@ -2,7 +2,11 @@
 // This file contains all hardcoded values from across the application
 
 // SEO and Metadata
-export const companyName = 'Peace and Philip'
+export const companyName = "PeacePhilip";
+export const telephone = "+27 63 083 7986";
+export const companySlogan = "Build with precision, style, and realibility."
+
+export const company_logo = "/peace_transparent.png";
 export const seoData = {
     metadata: {
         title: "PeacePhilip Construction",
@@ -334,3 +338,26 @@ export const privacyPageData = {
         url: "bg-[url('/policy.svg')]",
     },
 };
+
+export const faqData = [
+    {
+    question: "Can I see your previous work?",
+    answer: "Yes, We are happy to share our portfolio and client references so you can asses the quality of our projects "
+    },
+    {
+        question: "Do wall and floor tiling cost the same?",
+        answer: "Pricing differs between wall and floors, as it depends on the surface, preparation and type of tiles required"
+        },
+    {
+        question: "What ceiling types do you offer?",
+        answer: "We install a variety of ceilings, including PVC, suspended, and gypsum board ceilings, depending on style and budget."
+    },
+    {
+        question: "Do you handle both new installations and repairs?",
+        answer: "Yes, our services cover new projects , upgrades and emergency repairs."
+    },
+    {
+        question: "Can Gamazini be applied indoors and outdoors?",
+        answer: "Yes, Gamazini finishes work well for both interior and exterior wall."
+    }
+    ];

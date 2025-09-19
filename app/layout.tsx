@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Roboto} from "next/font/google";
 import "./globals.css";
-import Header from "hydravex/app/components/navlink";
-import Footer from "hydravex/app/components/footer";
+import Header, { LandingNavigation } from "hydravex/app/components/navlink";
 import { PathProvider } from "./context";
 import { PageTransition } from "./components/animations";
 import { Analytics } from "@vercel/analytics/react";
 import { seoData } from "./data/siteData";
-
+import CTAAndFooter from "hydravex/app/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({subsets:["latin"], weight:["300","400","500"]})
@@ -34,15 +33,13 @@ export default function RootLayout({
             </head>
             <body className={roboto.className}>
                 <PathProvider>
-                    <div className="sticky top-0 z-50">
-                        <Header url="" />
-                    </div>
                     <div className="bg-gray-300">
+                        <LandingNavigation/>
                         <PageTransition>{children}</PageTransition>
                         <Analytics />
                     </div>
                 <div>
-                    <Footer />
+                    <CTAAndFooter />
                 </div>
                 </PathProvider>
             </body>
