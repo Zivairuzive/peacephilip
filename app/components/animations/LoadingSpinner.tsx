@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ReactNode } from "react";
 
 interface LoadingSpinnerProps {
@@ -26,7 +26,7 @@ export default function LoadingSpinner({
             transition: {
                 duration: 1,
                 repeat: Infinity,
-                ease: "linear",
+                ease: "linear" as const,
             },
         },
     };
@@ -38,18 +38,14 @@ export default function LoadingSpinner({
             transition: {
                 duration: 1.5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "easeInOut" as const,
             },
         },
     };
 
     if (children) {
         return (
-            <motion.div
-                className="flex items-center justify-center"
-                variants={pulseVariants}
-                animate="animate"
-            >
+            <motion.div className="flex items-center justify-center" variants={pulseVariants} animate="animate">
                 {children}
             </motion.div>
         );
